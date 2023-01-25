@@ -1,0 +1,33 @@
+﻿@model RiderSolution1.Models.Category
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewBag.Title = "Create Category";
+    Layout = "_Layout";
+}
+<div class="mt-1 container">
+    <form class="myFlex" method="post">
+        <div>
+            <h2 class="text-primary">Create Create</h2>
+            <hr>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control">
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="DisplayOrder"></label>
+            <input asp-for="DisplayOrder" class="form-control">
+            <span class="text-danger" asp-validation-for="DisplayOrder"></span>
+        </div>
+        <button class="btn btn-submit" type="submit">Create</button>
+        <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Back</a>
+    </form>
+</div>
+
+
+@section Scripts
+{
+ <partial name="_ValidationScriptsPartial"/>   
+}
